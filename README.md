@@ -116,19 +116,36 @@ How many sellers are there in the e-commerce website?
 
 ### Task 12
 The attacker started sending Ether from all identified sellers' wallets. What is the hash of the first transaction?
+ - [ ] Following the packets after the attacker retrieved the reachkart.db file (GET /data/reachkart.db HTTP/1.1). We see alot of **"POST / HTTP/1.1 , JSON (application/json)"** transactions.
+ - [ ] When we follow the stream of the "HTTP chunked response" we can see the "transactionHash"
+ <img width="1732" height="955" alt="14" src="https://github.com/user-attachments/assets/e6e076c3-7829-4695-9604-c265b6e0357b" />
+
 ### Answer
-******************************************************************
+ - [x] 0x7b7ded2d51f0dcb1bf3fc5cc9598b81a7a622aac15d3841d377c548986e0a7c3
 
 ### Task 13
 What was the total amount of Ether stolen by the attacker? (1 Eth = 10^18 wei)
+- [ ] Run a TCP_Stream on the last packet of the whole exchange of **"HTTP/1.1 200 OK , JSON (applicatio/json)"**
+- [ ] You will see The HTTP request and response interacting with an Ethereum JSON-RPC node, copy the server response of "result":"0x1529f07e833d46000" to a hex translator, devide this value '24400230000000000000' by 10^8 which is:
+- [ ] 0230000000000000 ÷ 1000000000000000000 = 24.40023
+2440<img width="1723" height="943" alt="16" src="https://github.com/user-attachments/assets/93288363-abba-4e06-9a22-d8ab6728597c" />
+<img width="836" height="532" alt="16-1" src="https://github.com/user-attachments/assets/64060d1d-4f32-4de7-b475-f1765715c06f" />
+
 ### Answer
-**.*
+ - [x] 24.4
 
 ### Task 14
 What is the block number of the last transaction in which Ether was stolen? (Decimal)
-### Answer
-number, such as 3, 17, or 4567
+- [ ] You filter by this: "POST / HTTP/1.1 , JSON (application/json)" and scroll to the end to fing the last packet containing the last tractionactions, use "Follow TCP_Stream", sift through the conversation and you will see a ("blockNumber":"0x12"), you can then copy and covert the HEX value to decimal using a tool of you choice or use your head.
+<img width="1736" height="956" alt="15-1" src="https://github.com/user-attachments/assets/d0b053e5-4c05-451f-9857-e5d83dabbd8e" />
+<img width="843" height="937" alt="15-2" src="https://github.com/user-attachments/assets/e2c1de25-1702-404d-a3e6-afea8f1377ed" />
 
+### Answer
+- [x] 18
+ 
 ### Task 15
 After the attacker stole the Ether, what was the balance in their wallet? (Ignore the trailing zeros)
+- [ ] just copy and paste the total amount you found from Task 13
+- [ ] - [ ] 0230000000000000 ÷ 1000000000000000000 = 24.40023
 ### Answer
+- [x] 24.40023
